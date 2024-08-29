@@ -55,7 +55,7 @@ class _firstScreenState extends State<firstScreen> {
         children: [
           SizedBox(
             width: double.infinity, // Optional: make container full width
-            height: 300, // Set the desired height for the slideshow
+            height: 350, // Set the desired height for the slideshow
             child: Slideshow(),
           ),
           Container(
@@ -123,17 +123,55 @@ class _firstScreenState extends State<firstScreen> {
             ),
           ),
           Container(
-            color: const Color.fromARGB(255, 255, 7, 81),
-            child: Row(
+            width: double.infinity,
+            height: 300,
+            color: const Color.fromARGB(255, 0, 0, 0), // Red background color
+            child: Column(
               children: [
+                // Row with four equally spaced containers
                 Container(
-                  color: Color.fromARGB(255, 52, 160, 142),
-                  child: Column(
+                  height: 150,
+                  child: Row(
                     children: [
-                      Container(
-                        color: const Color.fromARGB(255, 0, 0, 0),
-                        height: 100,
-                      )
+                      Expanded(
+                        child: Container(
+                          height: double
+                              .infinity, // Makes each container take the full height of the parent
+                          color: Colors.amber, // Amber color
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: double.infinity,
+                          color:
+                              const Color.fromARGB(255, 0, 0, 0), // Black color
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: double.infinity,
+                          color: const Color.fromARGB(
+                              255, 7, 255, 81), // Green color
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: double.infinity,
+                          color: const Color.fromARGB(
+                              255, 73, 7, 255), // Purple color
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 150,
+                  child: Row(
+                    children: [
+                      Expanded(
+                          child: Container(
+                        color: Colors.orange,
+                      ))
                     ],
                   ),
                 )
@@ -141,6 +179,24 @@ class _firstScreenState extends State<firstScreen> {
             ),
           )
         ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.tv),
+            label: 'Classroom',
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.grid_view_outlined), label: "More")
+        ],
+        currentIndex: 0, // Default selected index
+        onTap: (int index) {
+          // Handle item tap
+        },
       ),
     );
   }

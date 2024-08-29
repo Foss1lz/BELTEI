@@ -65,7 +65,7 @@ class _SlideshowState extends State<Slideshow> {
             child: SmoothPageIndicator(
               controller: _pageController,
               count: _images.length,
-              effect: WormEffect(
+              effect: const WormEffect(
                 activeDotColor: Colors.blue,
                 dotColor: Colors.grey,
                 dotHeight: 8,
