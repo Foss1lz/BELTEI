@@ -121,6 +121,24 @@ class _firstScreenState extends State<firstScreen> {
                 ],
               ),
             ),
+          ),
+          Container(
+            color: const Color.fromARGB(255, 255, 7, 81),
+            child: Row(
+              children: [
+                Container(
+                  color: Color.fromARGB(255, 52, 160, 142),
+                  child: Column(
+                    children: [
+                      Container(
+                        color: const Color.fromARGB(255, 0, 0, 0),
+                        height: 100,
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
           )
         ],
       ),

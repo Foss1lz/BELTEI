@@ -24,12 +24,14 @@ class _SlideshowState extends State<Slideshow> {
   }
 
   void _startAutoSlide() {
-    _timer = Timer.periodic(Duration(seconds: 3), (Timer timer) {
+    _timer = Timer.periodic(Duration(seconds: 10), (Timer timer) {
+      //change slide
       if (_pageController.hasClients) {
         int nextPage = (_pageController.page?.toInt() ?? 0) + 1;
         if (nextPage >= _images.length) nextPage = 0;
         _pageController.animateToPage(nextPage,
-            duration: Duration(milliseconds: 300), curve: Curves.easeInOut);
+            duration: Duration(milliseconds: 500),
+            curve: Curves.easeInOut); //transition smoothness
       }
     });
   }
