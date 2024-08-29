@@ -1,0 +1,39 @@
+name: beltei
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  smooth_page_indicator: ^1.2.0
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - asset/beltei.png
+    - asset/visal.png
+    - asset/chhaty.png
+    - asset/chomnab.png
+    - asset/cambodiaflag.png
+    - asset/britflag.png
+
+  fonts:
+    - family: khmer
+      fonts:
+        - asset: font/KhmerOSMoul.ttf
+
+    - family: times
+      fonts:
+        - asset: font/times.ttf
