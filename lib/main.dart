@@ -1,4 +1,4 @@
-import 'package:beltei/index.dart';
+import 'package:beltei/splashscreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: firstScreen(),
+      home: SplashScreen(),
     );
   }
 }
