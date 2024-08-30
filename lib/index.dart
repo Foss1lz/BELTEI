@@ -58,7 +58,7 @@ class _firstScreenState extends State<firstScreen> {
               width: double.infinity,
               height: MediaQuery.of(context).size.height *
                   0.4, // 40% of screen height
-              child: Slideshow(),
+              child: const Slideshow(),
             ),
             Container(
               width: double.infinity,
@@ -139,7 +139,7 @@ class _firstScreenState extends State<firstScreen> {
                         children: [
                           Expanded(
                             child: Container(
-                              color: Colors.amber,
+                              color: const Color.fromARGB(255, 255, 255, 255),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [

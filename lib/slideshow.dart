@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Slideshow extends StatefulWidget {
+  const Slideshow({super.key});
+
   @override
   _SlideshowState createState() => _SlideshowState();
 }
@@ -24,13 +26,13 @@ class _SlideshowState extends State<Slideshow> {
   }
 
   void _startAutoSlide() {
-    _timer = Timer.periodic(Duration(seconds: 10), (Timer timer) {
+    _timer = Timer.periodic(const Duration(seconds: 10), (Timer timer) {
       //change slide
       if (_pageController.hasClients) {
         int nextPage = (_pageController.page?.toInt() ?? 0) + 1;
         if (nextPage >= _images.length) nextPage = 0;
         _pageController.animateToPage(nextPage,
-            duration: Duration(milliseconds: 500),
+            duration: const Duration(milliseconds: 500),
             curve: Curves.easeInOut); //transition smoothness
       }
     });
