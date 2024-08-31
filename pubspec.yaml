@@ -30,10 +30,18 @@ flutter:
     - asset/britflag.png
 
   fonts:
-    - family: khmer
+    - family: KhmerOSMoul
       fonts:
         - asset: font/KhmerOSMoul.ttf
+
+    - family: KhmerOSsiemreap
+      fonts:      
+        - asset: font/KhmerOSsiemreap.ttf
 
     - family: times
       fonts:
         - asset: font/times.ttf
+
+    - family: Nunito
+      fonts:
+        - asset: font/Nunito.ttf
