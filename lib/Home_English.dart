@@ -5,12 +5,16 @@ class CircularImageButton extends StatelessWidget {
   final String imagePath;
   final String text;
   final VoidCallback onPressed;
+  final double imageSize; // New parameter for image size
+  final BoxFit imageFit; // New parameter for image fit
 
   const CircularImageButton({
     super.key,
     required this.imagePath,
     required this.text,
     required this.onPressed,
+    this.imageSize = 48.0, // Default size
+    this.imageFit = BoxFit.cover, // Default fit
   });
 
   @override
@@ -36,12 +40,8 @@ class CircularImageButton extends StatelessWidget {
           Container(
             width: MediaQuery.of(context).size.width * 0.12,
             height: MediaQuery.of(context).size.width * 0.12,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              border: Border.all(
-                color: Colors.black, // Border color
-                width: 1.0, // Border width
-              ),
             ),
             child: ClipOval(
               child: Image.asset(
@@ -74,6 +74,34 @@ class Home_English extends StatefulWidget {
 
 // ignore: camel_case_types
 class _Home_EnglishState extends State<Home_English> {
+  //for row1
+  final List<String> imagePaths1 = [
+    "asset/news.png",
+    "asset/program.png",
+    "asset/admission.png",
+    "asset/tuition.png",
+  ];
+  final List<String> text_row1s = [
+    "News",
+    "Main Programs",
+    "Admision",
+    "Tuition Fees"
+  ];
+  //row 2 do change image manually
+
+  //row 3
+  final List<String> imagePaths3 = [
+    "asset/news.png",
+    "asset/program.png",
+    "asset/admission.png",
+    "asset/tuition.png",
+  ];
+  final List<String> text_row3 = [
+    "News",
+    "Main Programs",
+    "Admision",
+    "Tuition Fees"
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -205,14 +233,15 @@ class _Home_EnglishState extends State<Home_English> {
               color: const Color.fromARGB(255, 0, 0, 0),
               child: Column(
                 children: [
+                  //Row1
                   Expanded(
                     child: Row(
                       children: List.generate(
-                          4,
+                          imagePaths1.length,
                           (index) => Expanded(
                                 child: CircularImageButton(
-                                  imagePath: "asset/chomnab.png",
-                                  text: "Chomnab-${index + 1}",
+                                  imagePath: imagePaths1[index],
+                                  text: text_row1s[index],
                                   onPressed: () {
                                     print("Chomnab-${index + 1} tapped!");
                                   },
@@ -220,14 +249,15 @@ class _Home_EnglishState extends State<Home_English> {
                               )),
                     ),
                   ),
+                  //Row2
                   Expanded(
                     child: Row(
                       children: [
                         Expanded(
                           flex: 1,
                           child: CircularImageButton(
-                            imagePath: "asset/chomnab.png",
-                            text: "Chomnab-1",
+                            imagePath: "asset/history.jpg",
+                            text: "History and Location",
                             onPressed: () {
                               print("Chomnab-1 tapped!");
                             },
@@ -235,19 +265,61 @@ class _Home_EnglishState extends State<Home_English> {
                         ),
                         Expanded(
                           flex: 2,
-                          child: CircularImageButton(
-                            imagePath: "asset/chomnab.png",
-                            text: "Chomnab-2",
-                            onPressed: () {
-                              print("Chomnab-2 tapped!");
-                            },
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ButtonStyle(
+                              padding: WidgetStateProperty.all<EdgeInsets>(
+                                  EdgeInsets.zero),
+                              backgroundColor: WidgetStateProperty.all<Color>(
+                                  const Color.fromARGB(255, 1, 128, 202)),
+                              shape: WidgetStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(0),
+                                ),
+                              ),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SizedBox(
+                                  width: MediaQuery.of(context).size.width *
+                                      0.25, // Adjust width as needed
+                                  height: MediaQuery.of(context).size.width *
+                                      0.15, // Adjust height as needed
+                                  child: Image.asset(
+                                    "asset/elearning.png",
+                                    fit:
+                                        BoxFit.cover, // Adjust BoxFit as needed
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                const Text(
+                                  "សិក្សាតាមប្រព័ន្ធអេឡិចត្រូនិច",
+                                  style: TextStyle(
+                                      fontFamily: "KhmerOSsiemreap",
+                                      fontWeight: FontWeight.bold,
+                                      color:
+                                          Color.fromARGB(255, 255, 255, 255)),
+                                ),
+                                const Text(
+                                  "E-Learning",
+                                  style: TextStyle(
+                                    fontFamily: "Nunito",
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                         Expanded(
                           flex: 1,
                           child: CircularImageButton(
-                            imagePath: "asset/chomnab.png",
-                            text: "Chomnab-3",
+                            imagePath: "asset/contact.png",
+                            text: "Contact",
                             onPressed: () {
                               print("Chomnab-3 tapped!");
                             },
@@ -256,6 +328,7 @@ class _Home_EnglishState extends State<Home_English> {
                       ],
                     ),
                   ),
+                  //Row3
                   Expanded(
                     child: Row(
                       children: List.generate(

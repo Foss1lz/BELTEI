@@ -28,6 +28,19 @@ flutter:
     - asset/chomnab.png
     - asset/cambodiaflag.png
     - asset/britflag.png
+    - asset/news.png
+    - asset/program.png
+    - asset/admission.png
+    - asset/tuition.png
+    - asset/history.jpg
+    - asset/elearning.png
+    - asset/contact.png
+
+
+
+
+
+
 
   fonts:
     - family: KhmerOSMoul

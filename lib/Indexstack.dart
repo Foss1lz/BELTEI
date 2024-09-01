@@ -11,7 +11,6 @@ class Indexstack extends StatefulWidget {
 
 class _IndexstackState extends State<Indexstack> {
   int _selectedIndex = 0;
-  bool _isHovered = false;
 
   void _onItemTapped(int index) {
     setState(() {
@@ -24,7 +23,7 @@ class _IndexstackState extends State<Indexstack> {
     return Scaffold(
       body: IndexedStack(
         index: _selectedIndex,
-        children: [Home_English(), Classroom()],
+        children: const [Home_English(), Classroom()],
       ),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.only(
