@@ -1,5 +1,6 @@
 import 'package:beltei/Classroom.dart';
 import 'package:beltei/Home_English.dart';
+import 'package:beltei/More.dart';
 import 'package:flutter/material.dart';
 
 class Indexstack extends StatefulWidget {
@@ -23,7 +24,7 @@ class _IndexstackState extends State<Indexstack> {
     return Scaffold(
       body: IndexedStack(
         index: _selectedIndex,
-        children: const [Home_English(), Classroom()],
+        children: const [Home_English(), Classroom(), Morescreen()],
       ),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.only(

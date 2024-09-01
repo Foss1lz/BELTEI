@@ -91,16 +91,16 @@ class _Home_EnglishState extends State<Home_English> {
 
   //row 3
   final List<String> imagePaths3 = [
-    "asset/news.png",
-    "asset/program.png",
-    "asset/admission.png",
-    "asset/tuition.png",
+    "asset/belteigroup.png",
+    "asset/facebook.png",
+    "asset/youtube.png",
+    "asset/job.png",
   ];
   final List<String> text_row3 = [
-    "News",
-    "Main Programs",
-    "Admision",
-    "Tuition Fees"
+    "Website",
+    "Facebook",
+    "Youtube",
+    "Job Opportunities"
   ];
   @override
   Widget build(BuildContext context) {
@@ -335,8 +335,8 @@ class _Home_EnglishState extends State<Home_English> {
                           4,
                           (index) => Expanded(
                                 child: CircularImageButton(
-                                  imagePath: "asset/chomnab.png",
-                                  text: "Chomnab-${index + 1}",
+                                  imagePath: imagePaths3[index],
+                                  text: text_row3[index],
                                   onPressed: () {
                                     print("Chomnab-${index + 1} tapped!");
                                   },
