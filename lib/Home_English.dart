@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:beltei/slideshow.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CircularImageButton extends StatelessWidget {
   final String imagePath;
@@ -38,8 +39,8 @@ class CircularImageButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: MediaQuery.of(context).size.width * 0.12,
-            height: MediaQuery.of(context).size.width * 0.12,
+            width: MediaQuery.of(context).size.width * 0.08,
+            height: MediaQuery.of(context).size.width * 0.08,
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
             ),
@@ -52,9 +53,10 @@ class CircularImageButton extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
+            textAlign: TextAlign.center,
             text,
             style: const TextStyle(
-              fontSize: 14,
+              fontSize: 13,
               color: Colors.black,
             ),
           ),
@@ -100,7 +102,7 @@ class _Home_EnglishState extends State<Home_English> {
     "Website",
     "Facebook",
     "Youtube",
-    "Job Opportunities"
+    "Job Opportunity"
   ];
   @override
   Widget build(BuildContext context) {
@@ -184,15 +186,23 @@ class _Home_EnglishState extends State<Home_English> {
                           Image.asset(
                             "asset/cambodiaflag.png",
                             fit: BoxFit.cover,
-                            width: MediaQuery.of(context).size.width * 0.09,
+                            // width: MediaQuery.of(context).size.width *
+                            //     0.09, // Adjusts with screen size
+                            width: 45,
+                            height: 30,
                           ),
-                          const Text(
-                            "ភាសារខ្មែរ",
-                            style: TextStyle(
+                          const FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              "ភាសារខ្មែរ",
+                              style: TextStyle(
+                                // fontSize: MediaQuery.of(context).size.width *
+                                //     0.025, // Dynamic font size
                                 fontSize: 10,
                                 fontFamily: "KhmerOSsiemreap",
-                                fontWeight: FontWeight.bold),
-                            overflow: TextOverflow.ellipsis,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ),
                         ],
                       ),
@@ -209,13 +219,16 @@ class _Home_EnglishState extends State<Home_English> {
                         Image.asset(
                           "asset/britflag.png",
                           fit: BoxFit.cover,
-                          width: MediaQuery.of(context).size.width * 0.09,
+                          // width: MediaQuery.of(context).size.width * 0.09,
+                          width: 45,
+                          height: 30,
                         ),
-                        const Text(
+                        Text(
                           "English",
-                          style: TextStyle(
+                          style: GoogleFonts.roboto(
+                              // fontSize:
+                              //     MediaQuery.of(context).size.width * 0.025,
                               fontSize: 10,
-                              fontFamily: "Nunito",
                               fontWeight: FontWeight.bold),
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -283,10 +296,12 @@ class _Home_EnglishState extends State<Home_English> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 SizedBox(
-                                  width: MediaQuery.of(context).size.width *
-                                      0.25, // Adjust width as needed
-                                  height: MediaQuery.of(context).size.width *
-                                      0.15, // Adjust height as needed
+                                  width: 100,
+                                  height: 60,
+                                  // width: MediaQuery.of(context).size.width *
+                                  //     0.20, // Adjust width as needed
+                                  // height: MediaQuery.of(context).size.width *
+                                  //     0.15, // Adjust height as needed
                                   child: Image.asset(
                                     "asset/elearning.png",
                                     fit:
@@ -300,6 +315,7 @@ class _Home_EnglishState extends State<Home_English> {
                                   "សិក្សាតាមប្រព័ន្ធអេឡិចត្រូនិច",
                                   style: TextStyle(
                                       fontFamily: "KhmerOSsiemreap",
+                                      fontSize: 12,
                                       fontWeight: FontWeight.bold,
                                       color:
                                           Color.fromARGB(255, 255, 255, 255)),

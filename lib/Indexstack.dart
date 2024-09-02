@@ -24,7 +24,7 @@ class _IndexstackState extends State<Indexstack> {
     return Scaffold(
       body: IndexedStack(
         index: _selectedIndex,
-        children: const [Home_English(), Classroom(), Morescreen()],
+        children: [Home_English(), Classroom(), Morescreen()],
       ),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.only(

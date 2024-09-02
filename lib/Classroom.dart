@@ -36,7 +36,7 @@ class _ClassroomState extends State<Classroom> {
                   0.10, //space between logo and button
             ),
             SizedBox(
-              width: MediaQuery.of(context).size.height * 0.45,
+              width: MediaQuery.of(context).size.width * 0.8,
               height: MediaQuery.of(context).size.height * 0.05,
               child: ElevatedButton(
                 onPressed: () {},
@@ -59,7 +59,7 @@ class _ClassroomState extends State<Classroom> {
                   0.04, //space between buton
             ),
             SizedBox(
-              width: MediaQuery.of(context).size.height * 0.45,
+              width: MediaQuery.of(context).size.width * 0.8,
               height: MediaQuery.of(context).size.height * 0.05,
               child: ElevatedButton(
                 onPressed: () {},
