@@ -98,6 +98,7 @@ class _Home_EnglishState extends State<Home_English> {
     "asset/youtube.png",
     "asset/job.png",
   ];
+  // ignore: non_constant_identifier_names
   final List<String> text_row3 = [
     "Website",
     "Facebook",
@@ -110,35 +111,43 @@ class _Home_EnglishState extends State<Home_English> {
       appBar: AppBar(
         toolbarHeight: 55,
         backgroundColor: const Color.fromARGB(255, 30, 96, 144),
-        flexibleSpace: Center(
-          child: Row(
+        flexibleSpace: Container(
+          padding: EdgeInsets.only(top: 20),
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(
-                "asset/beltei.png",
-                fit: BoxFit.cover,
-                height: MediaQuery.of(context).size.height * 0.05,
-              ),
-              const SizedBox(width: 10),
-              const Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "សាលា  ប៊ែលធី  អន្តរជាតិ",
-                    style: TextStyle(
-                        fontSize: 15,
-                        fontFamily: "KhmerOSMoul",
-                        color: Colors.white),
-                  ),
-                  Text(
-                    "BELTEI  INTERNATIONAL  SCHOOL",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 11,
-                        fontFamily: "times",
-                        fontWeight: FontWeight.bold),
-                  ),
-                ],
+              Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "asset/beltei.png",
+                      fit: BoxFit.cover,
+                      height: MediaQuery.of(context).size.height * 0.05,
+                    ),
+                    const SizedBox(width: 10),
+                    const Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "សាលា  ប៊ែលធី  អន្តរជាតិ",
+                          style: TextStyle(
+                              fontSize: 15,
+                              fontFamily: "KhmerOSMoul",
+                              color: Colors.white),
+                        ),
+                        Text(
+                          "BELTEI  INTERNATIONAL  SCHOOL",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 11,
+                              fontFamily: "times",
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
